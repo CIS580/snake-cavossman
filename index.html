@@ -1,13 +1,40 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Snake</title>
-    <link type="text/css" rel="stylesheet" href="snake.css" />
-  </head>
-  <body>
-    <h1>Play Snake</h1>
-    <canvas id="snake" width="760" height="480"></canvas>
+
+<head>
+  <title>Snake</title>
+  <link type="text/css" rel="stylesheet" href="snake.css" />
+</head>
+
+<body>
+  <h1>Play Snake</h1>
+  <canvas id="snake" width="760" height="480"></canvas>
+
+  
+
+  <div>
+  <table id="sidebar">
+    <col width="150">
+    <tr>
+      <th>Score: </th>
+      <th id="currScore">0</th>
+    </tr>
+    <tr>
+      <th>High Score: </th>
+      <th id="highScore">0</th>
+    </tr>
+    <td><br> </td>
+    <tr>
+      <th><a id="newGame" onclick="initializeGame()" href="#">New Game</a></th>
+    </tr>
+  </table>
     <h2>Instructions</h2>
-    <script type="text/javascript" src="snake.js"></script>
-  </body>
+    <p>
+      Press Space to start the game.<br>Navigate the terrain with the arrow keys or WASD.<br>Don't run into the edges or the obstacles, 
+	  don't run off the board and try not to eat yourself.<br>Eating food will increase your size and give you 10 points!<br>Play with sound for best experience.
+    </p>
+  </div>
+  <script type="text/javascript" src="snake.js"></script>
+</body>
+
 </html>
