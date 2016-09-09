@@ -112,6 +112,10 @@ function render(elapsedTime) {
   document.getElementById("currScore").innerHTML = score;
 }
 
+/**
+ * @function spawnSnake
+ * Spawns the Snake in a random location
+ */
 function spawnSnake() {
   var head = randomPos(5);
   Snake.x = head.x;
@@ -142,6 +146,10 @@ function spawnSnake() {
   Snake.nextDir = Snake.dir;
 }
 
+/**
+ * @function move
+ * Updates the snakes position
+ */
 function move() {
   var newPos = new Object();
   checkDir();
@@ -224,6 +232,10 @@ function move() {
   }
 }
 
+/**
+ * @function checkDir
+ * Checks the direction to prevent the snake going backwards on itself.
+ */
 function checkDir() {
   if (Snake.nextDir == Snake.dir) return;
   switch (Snake.dir) {
@@ -243,7 +255,11 @@ function checkDir() {
   Snake.dir = Snake.nextDir;
 }
 
-//food generator
+/**
+ * @function handleFood
+ * The main game loop.
+ * @param{elapsedTime} the time elapsed
+ */
 function handleFood(elapsedTime) {
   Food.timer += elapsedTime;
   
@@ -262,7 +278,10 @@ function handleFood(elapsedTime) {
   }
 }
 
-//obstacle generator
+/**
+ * @function handleObstacles
+ * Creates obstacles
+ */
 function handleObstacles() {
   if (Snake.tail.length - 15 >= Obstacles.length) {
     var newObstacle = randomPos(1);
@@ -355,7 +374,12 @@ window.onkeydown = function (event) {
   }
 }
 
-//random number generator
+/**
+ * @function getRandom
+ * Gets a random number
+ * @param{min} minimun number
+ * @param{max} maximum number
+ */
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
